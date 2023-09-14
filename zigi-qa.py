@@ -1,29 +1,11 @@
 import requests
 import openai  
 import envinfo
-
 from azure.core.credentials import AzureKeyCredential  
 from azure.search.documents import SearchClient  
-from azure.search.documents.indexes.models import (  
-    SearchIndex,  
-    SearchField,  
-    SearchFieldDataType,  
-    SimpleField,  
-    SearchableField,  
-    SearchIndex,  
-    SemanticConfiguration,  
-    PrioritizedFields,  
-    SemanticField,  
-    SearchField,  
-    SemanticSettings,  
-    VectorSearch,  
-    VectorSearchAlgorithmConfiguration,  
-)  
-
 from tenacity import retry, wait_random_exponential, stop_after_attempt 
 
-
-class zigi_OpenAPI_PoC:
+class zigi_OpenAPI:
 
     def __init__(self):
         ### Cognitive Service 환경 변수 ###
@@ -126,8 +108,8 @@ class zigi_OpenAPI_PoC:
             return errorcode
 
 if __name__ == "__main__":
-    zop = zigi_OpenAPI_PoC()
-    zop.init_Var()
-    question = "질문"
+    zigi = zigi_OpenAPI()
+    zigi.init_Var()
+    question = "질문_내용"
     query_result = zop.search_cognitive(query=question)
-    zop.QA_ChatGPT(query_result=query_result, question=question)
+    zigi.QA_ChatGPT(query_result=query_result, question=question)
