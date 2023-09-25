@@ -111,5 +111,5 @@ if __name__ == "__main__":
     zigi = zigi_OpenAPI()
     zigi.init_Var()
     question = "질문_내용"
-    query_result = zop.search_cognitive(query=question)
+    query_result = zigi.search_cognitive(query=question)
     zigi.QA_ChatGPT(query_result=query_result, question=question)
