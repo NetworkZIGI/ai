@@ -19,6 +19,7 @@ os.environ["AWS_PROFILE"] = "zigi-bedrock"
 pdf_files = [
     "./data/visa-kor.pdf",
     "./data/card.pdf",
+    "./data/network.pdf"
 ]
 
 # 로더, 텍스트 분할기 및 임베딩 초기화
